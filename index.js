@@ -144,6 +144,7 @@ function Request(uri, method, headers, body) {
   this.uri = uri;
   this.method = method;
   this.headers = headers;
+  this.headers['content-length'] = body.length;
   this.body = body;
 }
 

@@ -23,6 +23,8 @@ var server = http.createServer(function (req, res) {
     shasum.update(req.headers['authorization']) || '';
     shasum.update(req.headers['accept'] || '');
     shasum.update(req.headers['content-type'] || '');
+    shasum.update(req.headers['content-length'] || '');
+    shasum.update(req.headers['transfer-encoding'] || '');
     shasum.update(req.url);
     shasum.update(req.body);
     res.end(shasum.digest());
