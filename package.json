@@ -1,6 +1,6 @@
 {
   "name": "request-sync",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Because sometimes you want your web requests to be synchronous",
   "keywords": [],
   "dependencies": {
