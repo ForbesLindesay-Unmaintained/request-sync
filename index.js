@@ -89,7 +89,7 @@ function request(uri, options) {
     options.body = new Buffer(options.body);
   }
   if (!options.body) {
-    options.body = new Buffer();
+    options.body = new Buffer(0);
   }
   if (options.auth) {
     if (hasOwnProperty.call(options.auth, 'username'))
