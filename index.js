@@ -157,7 +157,10 @@ function Request(uri, method, headers, body) {
  */
 function Response(statusCode, headers, body) {
   this.statusCode = statusCode;
-  this.headers = headers;
+  this.headers = {};
+  for (var key in headers) {
+    this.headers[key.toLowerCase()] = headers[key];
+  }
   this.body = body;
 }
 
