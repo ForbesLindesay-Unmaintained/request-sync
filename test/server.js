@@ -6,6 +6,17 @@ var concat = require('concat-stream');
 var util = require('util');
 
 var server = http.createServer(function (req, res) {
+  if (req.url === '/204') {
+    req = {
+      httpVersion: req.httpVersion,
+      headers: req.headers,
+      method: req.method,
+      url: req.url
+    };
+    console.log(util.inspect(req, {colors: true}).replace(/^/gm, '  '));
+    res.statusCode = 204;
+    return res.end();
+  }
   req.pipe(concat(function (body) {
     req = {
       httpVersion: req.httpVersion,

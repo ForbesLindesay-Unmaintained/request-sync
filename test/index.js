@@ -31,15 +31,28 @@ var requestB = {
   body: new Buffer('Hello my name is Forbes'),
   encoding: 'base64'
 };
+var requestC = {
+  method: 'get',
+  url: 'http://localhost:3000/204'
+};
 
+
+var supportsLibCurl = true;
+try {
+  require('http-sync');
+} catch (ex) {
+  supportsLibCurl = false;
+}
 function getResponses(req) {
   return new Promise(function (resolve, reject) {
     var responses = {};
-    console.log(color.purple('http-sync'));
-    requestSync.httpSync = require('http-sync');
-    requestSync.native = true;
-    responses['http-sync'] = requestSync(req);
-    console.log(util.inspect(responses['http-sync'], {colors: true}).replace(/^/gm, '  '));
+    if (supportsLibCurl) {
+      console.log(color.purple('http-sync'));
+      requestSync.httpSync = require('http-sync');
+      requestSync.native = true;
+      responses['http-sync'] = requestSync(req);
+      console.log(util.inspect(responses['http-sync'], {colors: true}).replace(/^/gm, '  '));
+    }
     setTimeout(function () {
       try {
         console.log(color.purple('http-sync-win'));
@@ -73,16 +86,25 @@ function getResponses(req) {
 
 setTimeout(function () {
   getResponses(requestA).then(function (responses) {
-    assert(responses['http-sync'].body.toString('hex') === responses['request'].body.toString('hex'),
-           'Expected `http-sync` response body to match `request` response body');
+    if (supportsLibCurl)
+      assert(responses['http-sync'].body.toString('hex') === responses['request'].body.toString('hex'),
+             'Expected `http-sync` response body to match `request` response body');
     assert(responses['http-sync-win'].body.toString('hex') === responses['request'].body.toString('hex'),
            'Expected `http-sync-win` response body to match `request` response body');
     return getResponses(requestB);
   }).then(function (responses) {
-    assert(responses['http-sync'].body.toString('hex') === responses['request'].body.toString('hex'),
-           'Expected `http-sync` response body to match `request` response body');
+    if (supportsLibCurl)
+      assert(responses['http-sync'].body.toString('hex') === responses['request'].body.toString('hex'),
+             'Expected `http-sync` response body to match `request` response body');
     assert(responses['http-sync-win'].body.toString('hex') === responses['request'].body.toString('hex'),
            'Expected `http-sync-win` response body to match `request` response body');
+    return getResponses(requestC);
+  }).then(function (responses) {
+    if (supportsLibCurl)
+      assert(responses['http-sync'].statusCode === responses['request'].statusCode,
+             'Expected `http-sync` response to match `request` response');
+    assert(responses['http-sync-win'].statusCode === responses['request'].statusCode,
+           'Expected `http-sync-win` response to match `request` response');
   }).done(function () {
     server.kill();
   }, function (err) {
