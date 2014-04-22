@@ -2,9 +2,9 @@
 
 Because sometimes you want your web requests to be synchronous
 
-[![Build Status](https://travis-ci.org/ForbesLindesay/request-sync.png?branch=master)](https://travis-ci.org/ForbesLindesay/request-sync)
-[![Dependency Status](https://gemnasium.com/ForbesLindesay/request-sync.png)](https://gemnasium.com/ForbesLindesay/request-sync)
-[![NPM version](https://badge.fury.io/js/request-sync.png)](http://badge.fury.io/js/request-sync)
+[![Build Status](https://img.shields.io/travis/ForbesLindesay/request-sync/master.svg)](https://travis-ci.org/ForbesLindesay/request-sync)
+[![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/request-sync.svg)](https://gemnasium.com/ForbesLindesay/request-sync)
+[![NPM version](https://img.shields.io/npm/v/request-sync.svg)](http://badge.fury.io/js/request-sync)
 
 ## Installation
 
