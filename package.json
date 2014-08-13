@@ -4,7 +4,7 @@
   "description": "Because sometimes you want your web requests to be synchronous",
   "keywords": [],
   "dependencies": {
-    "qs": "0.6.6",
+    "qs": "1.2.1",
     "http-sync-win": "0.0.7"
   },
   "optionalDependencies": {
