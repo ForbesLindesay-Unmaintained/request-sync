@@ -1,3 +1,6 @@
+**request-sync is deprecated, use [sync-request](https://github.com/ForbesLindesay/sync-request)**
+
+
 # request-sync
 
 Because sometimes you want your web requests to be synchronous

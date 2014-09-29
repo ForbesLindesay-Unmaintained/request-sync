@@ -1,5 +1,7 @@
 'use strict';
 
+console.warn('request-sync is deprecated, use sync-request');
+
 var url = require('url');
 var qs = require('qs');
 var type = require('./lib/type');
