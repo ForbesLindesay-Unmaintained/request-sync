@@ -6,8 +6,8 @@
 Because sometimes you want your web requests to be synchronous
 
 [![Build Status](https://img.shields.io/travis/ForbesLindesay/request-sync/master.svg)](https://travis-ci.org/ForbesLindesay/request-sync)
-[![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/request-sync.svg)](https://gemnasium.com/ForbesLindesay/request-sync)
-[![NPM version](https://img.shields.io/npm/v/request-sync.svg)](http://badge.fury.io/js/request-sync)
+[![Dependency Status](https://img.shields.io/david/ForbesLindesay/request-sync.svg)](https://david-dm.org/ForbesLindesay/request-sync)
+[![NPM version](https://img.shields.io/npm/v/request-sync.svg)](https://www.npmjs.com/package/request-sync)
 
 ## Installation
 
