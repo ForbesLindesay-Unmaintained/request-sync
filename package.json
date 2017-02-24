@@ -4,17 +4,17 @@
   "description": "Because sometimes you want your web requests to be synchronous",
   "keywords": [],
   "dependencies": {
-    "qs": "^2.2.4",
+    "qs": "^6.3.1",
     "http-sync-win": "^0.0.7"
   },
   "optionalDependencies": {
-    "http-sync": "^0.0.5"
+    "http-sync": "^0.1.2"
   },
   "devDependencies": {
     "request": "^2.44.0",
     "concat-stream": "^1.4.1",
-    "promise": "^5.0.0",
-    "bash-color": "^0.0.3"
+    "promise": "^7.1.1",
+    "bash-color": "^0.0.4"
   },
   "scripts": {
     "test": "node test/index.js"
