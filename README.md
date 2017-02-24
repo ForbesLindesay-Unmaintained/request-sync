@@ -3,6 +3,8 @@
 
 # request-sync
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/request-sync.svg)](https://greenkeeper.io/)
+
 Because sometimes you want your web requests to be synchronous
 
 [![Build Status](https://img.shields.io/travis/ForbesLindesay/request-sync/master.svg)](https://travis-ci.org/ForbesLindesay/request-sync)
